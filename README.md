@@ -21,7 +21,7 @@ The order of operations is critical. You cannot find the right sentence order be
    - **For small clusters ($N \le 12$)**: We solve the maximum-likelihood Hamiltonian path *exactly* using the **Held-Karp Dynamic Programming algorithm** in $O(2^N \cdot N^2)$ time.
    - **For larger clusters ($N > 12$)**: We run **Beam Search (width=16)** to build a strong initial path, followed by **2-Opt local search** to untangle crossing or inverted pairs.
 5. **5-Sentence chunking & translation (`src/translation/`)**:
-   Ordered sentences are grouped into chunks of 5 consecutive sentences (the last chunk absorbs any remainder $\le 5$). Chunks are translated using `ai4bharat/indictrans2-indic-en-dist-200M` (or `Helsinki-NLP/opus-mt-hi-en` as fallback), supported by an exact bilingual domain translation layer (`curated_translations.json`). This ensures the final English translation is 100% natural English with zero leftover Hindi glyphs or half-translated phrases.
+   Ordered sentences are grouped into chunks of 5 consecutive sentences (the last chunk absorbs any remainder $\le 5$). Chunks are translated using `ai4bharat/indictrans2-indic-en-dist-200M` (or `Helsinki-NLP/opus-mt-hi-en` as fallback), supported by an exact bilingual domain translation layer (`curated_translations.json`). This ensures the final English translation is with zero leftover Hindi glyphs or half-translated phrases.
 6. **Strict memory guard (`src/utils/gpu.py`)**:
    GPU memory is clamped to < 1.5 GB in code using dynamic memory fractions. Memory is audited after every stage, and models are loaded one at a time and freed before the next stage starts.
 
