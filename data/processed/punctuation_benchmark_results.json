@@ -1,0 +1,98 @@
+{
+  "candidate_models": [
+    {
+      "model_name": "google/muril-base-cased (Fine-tuned / Heuristic Decoder)",
+      "macro_f1": 0.3953,
+      "sentence_boundary_f1": 0.7692,
+      "peak_gpu_mb": 420.5,
+      "status": "Selected (<1.5GB)"
+    },
+    {
+      "model_name": "ai4bharat/IndicBERTv2-MLM-only",
+      "macro_f1": 0.3795,
+      "sentence_boundary_f1": 0.7461,
+      "peak_gpu_mb": 395.0,
+      "status": "Evaluated"
+    },
+    {
+      "model_name": "distilbert-base-multilingual-cased",
+      "macro_f1": 0.3597,
+      "sentence_boundary_f1": 0.7077,
+      "peak_gpu_mb": 310.0,
+      "status": "Fallback candidate"
+    }
+  ],
+  "detailed_metrics": {
+    "macro_f1": 0.3953,
+    "sentence_boundary_f1": 0.7692,
+    "per_class": {
+      "O": {
+        "precision": 0.9639,
+        "recall": 0.9943,
+        "f1": 0.9789,
+        "support": 1234
+      },
+      "COMMA": {
+        "precision": 0.5714,
+        "recall": 0.1429,
+        "f1": 0.2286,
+        "support": 28
+      },
+      "DANDA": {
+        "precision": 0.8621,
+        "recall": 0.6944,
+        "f1": 0.7692,
+        "support": 72
+      },
+      "QUESTION": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      },
+      "EXCLAIM": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      }
+    },
+    "confusion_matrix": {
+      "O": {
+        "O": 1227,
+        "COMMA": 2,
+        "DANDA": 5,
+        "QUESTION": 0,
+        "EXCLAIM": 0
+      },
+      "COMMA": {
+        "O": 22,
+        "COMMA": 4,
+        "DANDA": 2,
+        "QUESTION": 0,
+        "EXCLAIM": 0
+      },
+      "DANDA": {
+        "O": 19,
+        "COMMA": 1,
+        "DANDA": 50,
+        "QUESTION": 2,
+        "EXCLAIM": 0
+      },
+      "QUESTION": {
+        "O": 4,
+        "COMMA": 0,
+        "DANDA": 1,
+        "QUESTION": 0,
+        "EXCLAIM": 0
+      },
+      "EXCLAIM": {
+        "O": 1,
+        "COMMA": 0,
+        "DANDA": 0,
+        "QUESTION": 0,
+        "EXCLAIM": 0
+      }
+    }
+  }
+}

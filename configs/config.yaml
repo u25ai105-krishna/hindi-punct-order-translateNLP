@@ -1,0 +1,75 @@
+# Configuration for Hindi Punctuation Restoration, Ordering, and Translation Pipeline
+
+project_name: "nlp-punct-order-translate"
+seed: 42
+
+hardware:
+  device: "auto"             # auto | cuda | cpu
+  max_gpu_memory_gb: 1.5     # Strict 1.5 GB limit
+  enforce_memory_fraction: true
+  fp16: true
+  dataloader_num_workers: 0
+
+paths:
+  sample_dir: "data/samples"
+  processed_dir: "data/processed"
+  synthetic_dir: "data/synthetic"
+  output_dir: "outputs"
+  checkpoint_dir: "checkpoints"
+
+punctuation:
+  # Candidate models:
+  # 1. "google/muril-base-cased"
+  # 2. "ai4bharat/IndicBERTv2-MLM-only"
+  # 3. "xlm-roberta-base"
+  # 4. "distilbert-base-multilingual-cased"
+  model_name: "google/muril-base-cased"
+  fallback_model: "distilbert-base-multilingual-cased"
+  max_seq_len: 256
+  overlap_len: 32
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 3e-5
+  weight_decay: 0.01
+  num_epochs: 3
+  labels: ["O", "COMMA", "DANDA", "QUESTION", "EXCLAIM"]
+  label2id:
+    "O": 0
+    "COMMA": 1
+    "DANDA": 2
+    "QUESTION": 3
+    "EXCLAIM": 4
+  id2label:
+    0: "O"
+    1: "COMMA"
+    2: "DANDA"
+    3: "QUESTION"
+    4: "EXCLAIM"
+  null_marker: "[NULL]"
+
+ordering:
+  embedding_model: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  fallback_embedding_model: "l3cube-pune/indic-sentence-bert-nli"
+  pairwise_model: "google/muril-base-cased"
+  use_lora: true
+  lora_r: 8
+  lora_alpha: 16
+  max_seq_len: 128
+  batch_size: 8
+  held_karp_max_n: 12
+  beam_width: 16
+  two_opt_iterations: 100
+  clustering:
+    algorithm: "agglomerative" # agglomerative | kmeans | hdbscan
+    silhouette_threshold: 0.25
+    max_k: 5
+
+translation:
+  # Primary: ai4bharat/indictrans2-indic-en-dist-200M (IndicTrans2)
+  # Fallbacks: Helsinki-NLP/opus-mt-hi-en, facebook/nllb-200-distilled-600M
+  primary_model: "ai4bharat/indictrans2-indic-en-dist-200M"
+  fallback_model: "Helsinki-NLP/opus-mt-hi-en"
+  chunk_size: 5
+  max_length: 256
+  num_beams: 4
+  batch_size: 2

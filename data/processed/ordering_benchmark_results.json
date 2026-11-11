@@ -1,0 +1,37 @@
+{
+  "candidate_models": [
+    {
+      "model_name": "MiniLM-L12-v2 + Pairwise Scorer + Held-Karp / 2-Opt",
+      "kendall_tau": -0.0712,
+      "pairwise_acc": 0.4644,
+      "first_sent_acc": 0.3333,
+      "perfect_match": 0.0,
+      "peak_gpu_mb": 470.0,
+      "status": "Selected (<1.5GB)"
+    },
+    {
+      "model_name": "TF-IDF + Cosine Baseline + Held-Karp",
+      "kendall_tau": -0.0513,
+      "pairwise_acc": 0.3483,
+      "first_sent_acc": 0.2333,
+      "perfect_match": 0.0,
+      "peak_gpu_mb": 18.0,
+      "status": "Baseline"
+    },
+    {
+      "model_name": "IndicBERT LoRA Cross-Encoder",
+      "kendall_tau": -0.0676,
+      "pairwise_acc": 0.4458,
+      "first_sent_acc": 0.3133,
+      "perfect_match": 0.0,
+      "peak_gpu_mb": 620.0,
+      "status": "Evaluated"
+    }
+  ],
+  "detailed_metrics": {
+    "kendall_tau": -0.0712,
+    "pairwise_accuracy": 0.4644,
+    "first_sentence_accuracy": 0.3333,
+    "perfect_match_ratio": 0.0
+  }
+}

@@ -1,0 +1,53 @@
+
+# ==============================
+# Python Dependencies
+# ==============================
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==============================
+# Environment Variables / Secrets
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Jupyter Notebook
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# Build Files
+# ==============================
+dist/
+build/
+*.egg-info/
+
+# ==============================
+# Model Cache / Downloads
+# ==============================
+.cache/
+huggingface/
+# Keep project-required model files unless intentionally excluded
+
+# ==============================
+# Logs
+# ==============================
+*.log
+
+# ==============================
+# Mac
+# ==============================
+.DS_Store
+
+# ==============================
+# IDE
+# ==============================
+.idea/
+.vscode/

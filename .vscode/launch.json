@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Pipeline: Run End-to-End",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.pipeline",
+            "args": ["--input_dir", "data/samples", "--output_dir", "outputs", "--device", "auto"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Stage 0: Inspect Samples",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/data/inspect_samples.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Stage 1: Punctuation Train",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.punctuation.train",
+            "args": ["--config", "configs/config.yaml"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Stage 4: Pairwise Train",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.ordering.train_pairwise",
+            "args": ["--config", "configs/config.yaml"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["tests/"],
+            "console": "integratedTerminal"
+        }
+    ]
+}

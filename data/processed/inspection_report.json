@@ -1,0 +1,161 @@
+[
+  {
+    "file": "sample-1.txt",
+    "char_count": 3825,
+    "word_count": 773,
+    "null_count": 5,
+    "char_types": {
+      "devanagari": 3015,
+      "space": 773,
+      "digit": 17,
+      "latin": 20
+    },
+    "sample_null_contexts": [
+      "कर पूजा अर्चना [NULL] कथा आदि की",
+      "पर कलुष विनाशनी [NULL] पापहरिणी गंगा में",
+      "महादेव का मंदिर [NULL] बद्रीनाथ मंदिर आदि",
+      "त्रेता में पुष्कर [NULL] NULL द्वापर में",
+      "में पुष्कर NULL [NULL] द्वापर में कुरुक्षेत्र"
+    ],
+    "digit_patterns": [],
+    "common_sentence_endings_count": 12
+  },
+  {
+    "file": "sample-2.txt",
+    "char_count": 3797,
+    "word_count": 752,
+    "null_count": 5,
+    "char_types": {
+      "devanagari": 3016,
+      "space": 752,
+      "digit": 9,
+      "latin": 20
+    },
+    "sample_null_contexts": [
+      "लाइन भटनी से [NULL] तथा दूसरी छपरा",
+      "मुख्य केन्द्र था [NULL] ज्ञात रहे कि",
+      "महादेव की पूजा [NULL] यज्ञ NULL तथा",
+      "पूजा NULL यज्ञ [NULL] तथा पतित पावनी",
+      "मील पर काशी [NULL] और उससे 4"
+    ],
+    "digit_patterns": [],
+    "common_sentence_endings_count": 9
+  },
+  {
+    "file": "sample-3.txt",
+    "char_count": 3931,
+    "word_count": 748,
+    "null_count": 6,
+    "char_types": {
+      "devanagari": 3123,
+      "space": 748,
+      "other_punct_or_symbol": 1,
+      "digit": 35,
+      "latin": 24
+    },
+    "sample_null_contexts": [
+      "ने हस्तिनापुर पर [NULL] लेकिन समय के",
+      "जैन मंदिर में [NULL] NULL और कार्तिक",
+      "मंदिर में NULL [NULL] और कार्तिक शुक्ल",
+      "यानी ऐसा क्षेत्र [NULL] जहाँ कुछ असाधारण",
+      "लिए 400 कमरे [NULL] और सुबह के"
+    ],
+    "digit_patterns": [],
+    "common_sentence_endings_count": 8
+  },
+  {
+    "file": "sample-4.txt",
+    "char_count": 5428,
+    "word_count": 1122,
+    "null_count": 4,
+    "char_types": {
+      "devanagari": 4088,
+      "space": 1122,
+      "digit": 40,
+      "latin": 158,
+      "other_punct_or_symbol": 20
+    },
+    "sample_null_contexts": [
+      "प्रायः हाथ से [NULL] तथा विदेशों में",
+      "का सदस्य है [NULL] जो बोलचाल की",
+      "कार्यक्रम आरंभ किया [NULL] जिसके फलस्वरूप कुछ",
+      "अधिक उपज देना [NULL] रेशों का अधिक"
+    ],
+    "digit_patterns": [
+      "4 5",
+      "3 8",
+      "50 000",
+      "2 5",
+      "350 400"
+    ],
+    "common_sentence_endings_count": 5
+  },
+  {
+    "file": "sample-5.txt",
+    "char_count": 4992,
+    "word_count": 1035,
+    "null_count": 9,
+    "char_types": {
+      "devanagari": 3748,
+      "space": 1035,
+      "digit": 43,
+      "other_punct_or_symbol": 18,
+      "latin": 148
+    },
+    "sample_null_contexts": [
+      "रूप में फिब्रॉयन [NULL] जो स्पिनरेट से",
+      "की स्थापना हुई [NULL] सिल्क उत्पादन में",
+      "बाइवोल्टाइन रेशम कीट [NULL] NULL पश्‍चिम बंगाल",
+      "रेशम कीट NULL [NULL] पश्‍चिम बंगाल में",
+      "मल्टीवोल्टाइन रेशम कीट [NULL] NULL तथा कर्नाटक"
+    ],
+    "digit_patterns": [
+      "1 4",
+      "6 3",
+      "40 000",
+      "0 5",
+      "3 1 2"
+    ],
+    "common_sentence_endings_count": 3
+  },
+  {
+    "file": "sample-6.txt",
+    "char_count": 2330,
+    "word_count": 518,
+    "null_count": 11,
+    "char_types": {
+      "devanagari": 1768,
+      "space": 518,
+      "latin": 44
+    },
+    "sample_null_contexts": [
+      "यू नो [NULL] मैंने कितनी बार",
+      "जा रही हो [NULL] मुझे बताया भी",
+      "प्यार नहीं करेगी [NULL] ये तो मैंने",
+      "से न हो [NULL] इसे एक समझौता",
+      "यहां इस वक्त [NULL] मैं वापस नहीं"
+    ],
+    "digit_patterns": [],
+    "common_sentence_endings_count": 0
+  },
+  {
+    "file": "sample-7.txt",
+    "char_count": 3914,
+    "word_count": 873,
+    "null_count": 27,
+    "char_types": {
+      "devanagari": 2933,
+      "space": 873,
+      "latin": 108
+    },
+    "sample_null_contexts": [
+      "बात सुन ली [NULL] अब तो तुम्हारी",
+      "न हम खाएंगे [NULL] न पीएंगे NULL",
+      "NULL न पीएंगे [NULL] हम जा रहे",
+      "आपने बच्चों को [NULL] तभी तो राजेश",
+      "खाइये चौबे जी [NULL] मथुरा की कचौड़ियों"
+    ],
+    "digit_patterns": [],
+    "common_sentence_endings_count": 5
+  }
+]

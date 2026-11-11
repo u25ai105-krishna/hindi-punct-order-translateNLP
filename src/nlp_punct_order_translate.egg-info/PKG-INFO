@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: nlp-punct-order-translate
+Version: 0.1.0
+Summary: Reproducible Hindi Punctuation Restoration, Sentence Ordering, and Translation Pipeline
+Author: Senior NLP Engineer
+Requires-Dist: torch>=2.1.0
+Requires-Dist: transformers>=4.36.0
+Requires-Dist: datasets>=2.16.0
+Requires-Dist: peft>=0.7.0
+Requires-Dist: sentence-transformers>=2.2.2
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: scipy>=1.11.0
+Requires-Dist: pyyaml>=6.0.1
+Requires-Dist: tqdm>=4.66.0

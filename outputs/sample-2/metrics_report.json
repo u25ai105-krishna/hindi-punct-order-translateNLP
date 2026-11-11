@@ -1,0 +1,37 @@
+{
+  "file": "sample-2",
+  "raw_word_count": 752,
+  "restored_sentence_count": 42,
+  "num_topic_clusters": 1,
+  "num_chunks_of_5": 9,
+  "memory_usage": {
+    "stage1_punct": {
+      "stage": "sample-2_Stage1_Punctuation",
+      "device": "cpu",
+      "allocated_mb": 0.0,
+      "peak_mb": 0.0,
+      "limit_mb": 1536.0
+    },
+    "stage2_clustering": {
+      "stage": "sample-2_Stage2_Embeddings_Clustering",
+      "device": "cpu",
+      "allocated_mb": 0.0,
+      "peak_mb": 0.0,
+      "limit_mb": 1536.0
+    },
+    "stage4_ordering": {
+      "stage": "sample-2_Stage4_Ordering",
+      "device": "cpu",
+      "allocated_mb": 0.0,
+      "peak_mb": 0.0,
+      "limit_mb": 1536.0
+    },
+    "stage5_translation": {
+      "stage": "sample-2_Stage5_Translation",
+      "device": "cpu",
+      "allocated_mb": 0.0,
+      "peak_mb": 0.0,
+      "limit_mb": 1536.0
+    }
+  }
+}
