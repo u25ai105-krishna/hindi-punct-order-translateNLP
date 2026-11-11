@@ -213,7 +213,7 @@ The fair venue is located approximately 90 kilometers from Delhi. However, gradu
 
 ---
 
-## Limitations & Edge Cases
+## Limitations & Practical Edge Cases
 
 1. **No Ground Truth for Real Samples**: The provided sample files came without gold-standard answers. All numerical evaluation metrics come from our synthetic evaluation set (`data/synthetic/synthetic_eval_data.json`), which measures general performance but cannot score unsupervised samples directly.
 2. **Ordering is Hard**: Reconstructing global discourse order from shuffled sentences is inherently difficult (Kendall's $\tau \approx 0.11$). Dialogue-heavy files (samples 6 and 7 from Bollywood scripts) are especially challenging because sentences lack clear topical anchors.
@@ -223,8 +223,11 @@ The fair venue is located approximately 90 kilometers from Delhi. However, gradu
 
 ---
 
-## Future Improvements
+## Where to Improve from Here
 
-1. **LoRA Fine-Tuning on IndicCorp**: Fine-tune MuRIL with LoRA adapters ($r=8$) on ~500k sentences from the public IndicCorp Hindi dataset to sharpen intra-clause comma prediction.
-2. **Entity-Grid Transition Modeling**: Implement a formal entity-grid representation (tracking subject/object entity transitions across consecutive sentences) to boost coherence in long historical and narrative passages.
-3. **8-Bit Quantization via BitsAndBytes**: Introduce INT8/NF4 quantization for NMT decoders so that larger models like `facebook/nllb-200-distilled-600M` fit comfortably within the 1.5 GB limit during intensive inference jobs.
+If you want to take this project further, here is what actually matters in plain English:
+
+1. **Better comma predictions**: Right now, sentence boundaries (`।`) work well, but commas are hard to predict accurately. Training the punctuation model on a much larger dataset of properly punctuated Hindi text (like a few hundred thousand sentences from Hindi Wikipedia or news) would make commas significantly more natural.
+2. **Handling dialogue order**: Informational articles (like the ones about cotton, silk, and temples) have topic and entity clues that help determine order. But dialogue files (like the Bollywood scripts in samples 6 and 7) don't have clear topics. Adding a model that explicitly looks at who is speaking and tracks dialogue turns (question $\rightarrow$ response) would help untangle conversations.
+3. **Fixing broken fractions**: Samples 4 and 5 contain numbers like `1 4` and `3 1 2` that lost their `/` symbol. A regex pass that spots these specific number patterns in measurement contexts (like inches or ratios) and restores the slashes would fix the corrupted numbers cleanly.
+4. **Using a larger translation model with compression**: The distilled 200M IndicTrans2 model works well, but if you want higher-quality translations while still staying under the 1.5 GB limit, you could load a larger 600M model compressed to 8-bit precision so it fits in the same small memory footprint.
